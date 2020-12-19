@@ -63,7 +63,7 @@ function MainPage() {
     const [errorOpacity, setErrorOpacity] = useState(0)
     //useState 
 
-    document.body.style.background = bodyBackground
+    document.body.style.backgroundImage = bodyBackground
 
     //useEffect 
     useEffect(() => {
@@ -159,7 +159,7 @@ function MainPage() {
         
         var objTomorrow = new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
             weekday2 = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'),
-            dayOfWeek2 = weekday2[objToday.getDay()],
+            dayOfWeek2 = weekday2[objTomorrow.getDay()],
             domEnder2 = function() { var a = objTomorrow; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
             dayOfMonth2 = tomorrow + ( objTomorrow.getDate() < 10) ? '' + objTomorrow.getDate() + domEnder2 : objTomorrow.getDate() + domEnder2,
             months2 = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'),
@@ -171,7 +171,7 @@ function MainPage() {
         
         var objTwoTomorrow = new Date(new Date().getTime() + 2 * 24 * 60 * 60 * 1000),
             weekday3 = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'),
-            dayOfWeek3 = weekday3[objToday.getDay()],
+            dayOfWeek3 = weekday3[objTwoTomorrow.getDay()],
             domEnder3 = function() { var a = objTwoTomorrow; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
             dayOfMonth3 = tomorrow + ( objTwoTomorrow.getDate() < 10) ? '' + objTwoTomorrow.getDate() + domEnder3 : objTwoTomorrow.getDate() + domEnder3,
             months3 = new Array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'),
@@ -442,7 +442,7 @@ function MainPage() {
       }
 
     return (
-        <div style={{display: 'flex', flexDirection: 'row'}}>
+        <div className="page-manager">
 
             <div className="left-side-tab">
 
